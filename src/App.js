@@ -1,6 +1,7 @@
 import React from "react";
 import jumboData from "./fixtures/jumbo";
 import Jumbotron from "./components/jumbotron";
+import { GlobalStyles } from "./global-styles";
 
 export default function App() {
   return (
@@ -11,10 +12,10 @@ export default function App() {
             <Jumbotron.Title>{item.title}</Jumbotron.Title>
             <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
           </Jumbotron.Pane>
+
           <Jumbotron.Pane>
             <Jumbotron.Image src={item.image} alt={item.alt} />
           </Jumbotron.Pane>
-          <p>{item.alt}</p>
         </Jumbotron>
       ))}
 
