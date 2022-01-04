@@ -20,7 +20,7 @@ export function FaqsContainer(){
                 <OptForm.Text>
                     Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.
                 </OptForm.Text>
-                <OptForm.Input placeholder ="Email address" />
+                <OptForm.Input placeholder ="Email" />
                 <OptForm.Button>Vamos lá</OptForm.Button>
                 <OptForm.Break />
 
