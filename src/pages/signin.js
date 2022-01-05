@@ -10,7 +10,7 @@ import * as ROUTES from '../constants/routes';
 export default function Signin(){
     const history = useNavigate();
     const { app } = useContext(FirebaseContext);
-    const [emailAdrress, setEmailAdress] = useState('');
+    const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
@@ -19,21 +19,21 @@ export default function Signin(){
     // Confere se os elementos do input são válidos
      // Email e Senha
 
-    const isInvalid = password == '' || emailAdrress == '';
+    const isInvalid = password == '' || emailAddress == '';
     const handleSignIn = (event) => {
         event.preventDefault();
 
         // o firebase funcionará aqui.
         app
             .auth()
-            .signInWithEmailAndPassword(emailAdrress, password)
+            .signInWithEmailAndPassword(emailAddress, password)
             .then(() => {
                 // push para a página do browser
                 history.push(ROUTES.BROWSE);
 
             })
             .catch((error) => {
-                setEmailAdress('');
+                setEmailAddress('');
                 setPassword('');
                 setError(error.message);
             });
@@ -51,8 +51,8 @@ export default function Signin(){
                     <Form.Base onSubmit={handleSignIn} method="POST">
                         <Form.Input
                             placeholder="Email"
-                            value={emailAdrress}
-                            onChange={({ target }) => setEmailAdress(target.value)}
+                            value={emailAddress}
+                            onChange={({ target }) => setEmailAddress(target.value)}
                         />
                         <Form.Input
                             type="password"
